@@ -1,22 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DumpViewer.Models;
+using DumpViewer.Presenters;
+using DumpViewer.Views.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace DumpViewer
 {
     static class Program
     {
-        /// <summary>
-        /// Главная точка входа для приложения.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            DumpHeaderViewerView view = new DumpHeaderViewerView();
+            DomainModel model = new DomainModel();
+            DumpHeaderPresenter presenter = new DumpHeaderPresenter(model, view);
+            Application.Run(view);
         }
     }
 }
