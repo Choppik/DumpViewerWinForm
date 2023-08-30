@@ -13,7 +13,7 @@ namespace DumpViewer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            DumpHeaderViewerView view = new DumpHeaderViewerView();
+            DumpHeaderView view = new DumpHeaderView();
             DomainModel model = new DomainModel();
             DumpHeaderPresenter presenter = new DumpHeaderPresenter(model, view);
             Application.Run(view);

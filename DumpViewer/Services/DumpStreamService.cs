@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DumpViewer.Services
 {
+    /// <summary>
+    /// Данный класс является вспомогательным и служит для чтения байт из потока файла минидампа
+    /// </summary>
     public class DumpStreamService : BinaryReader
     {
         #region Конструкторы
@@ -12,11 +15,10 @@ namespace DumpViewer.Services
         public DumpStreamService(Stream stream, Encoding encoding, bool leaveOpen) : base(stream, encoding, leaveOpen) { }
         public DumpStreamService(byte[] bytes) : base(new MemoryStream(bytes)) { }
         public DumpStreamService(string file) : base(File.Open(file, FileMode.Open, FileAccess.Read, FileShare.Read)) { }
-
-        static readonly bool _isLittleEndian = BitConverter.IsLittleEndian;
         #endregion
 
         #region Позиционирование в потоке
+        static readonly bool _isLittleEndian = BitConverter.IsLittleEndian; //Проверка на то, как происходит запись и чтение байт на данной машине
         /// <summary>
         /// Получить текущую позицию в потоке
         /// </summary>

@@ -12,6 +12,10 @@ namespace DumpViewer.Views
     public interface IDumpHeaderView
     {
         /// <summary>
+        /// Проверка. Открыт ли файл.
+        /// </summary>
+        bool IsOpen { get; set; }
+        /// <summary>
         /// Отобразить предупреждение.
         /// </summary>
         /// <param name="text">Текст сообщения</param>

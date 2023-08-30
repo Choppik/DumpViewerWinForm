@@ -5,21 +5,18 @@ using System.Windows.Forms;
 
 namespace DumpViewer.Views.Forms
 {
-    public partial class DumpHeaderViewerView : Form, IDumpHeaderView
+    public partial class DumpHeaderView : Form, IDumpHeaderView
     {
-        private bool _isOpen = false; // false - если файл не открыт, true - если файл открыт 
-        public DumpHeaderViewerView()
+        public DumpHeaderView()
         {
             InitializeComponent();
         }
 
+        public bool IsOpen { get; set; } // false - если файл не открыт, true - если файл открыт 
         public event EventHandler<OpenFileEventArgs> OpenFileEvent;
         protected virtual void OnOpenFile(OpenFileEventArgs e) => OpenFileEvent?.Invoke(this, e);
-        
         public void ShowError(string text) => MessageBox.Show(text, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
         public void ShowWarning(string text) => MessageBox.Show(text, "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         public void InsertInTextBox(string dumpFile, string bugCheckString, string bugCheckCode, string parameter1,
             string parameter2, string parameter3, string parameter4, string processor,
             string versionArchitecture, string fullPath, string processorsCount, string majorVersion,
@@ -41,7 +38,7 @@ namespace DumpViewer.Views.Forms
             textBoxDumpFileSize.Text = dumpFileSize;
             textBoxDumpFileTime.Text = dumpFileTime;
         }
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog()
             {
@@ -59,10 +56,9 @@ namespace DumpViewer.Views.Forms
             }
 
             OnOpenFile(new OpenFileEventArgs(dialogResult, openFile.FileName));
-            _isOpen = dialogResult;
-            panel1_VisibleChanged(sender, e);
+            Panel1_VisibleChanged(sender, e);
         }
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
-        private void panel1_VisibleChanged(object sender, EventArgs e) => panel1.Visible = _isOpen;
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
+        private void Panel1_VisibleChanged(object sender, EventArgs e) => panel1.Visible = IsOpen;
     }
 }

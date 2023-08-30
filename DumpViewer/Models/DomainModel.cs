@@ -1,7 +1,7 @@
-﻿using DumpViewer.Services;
+﻿using DumpViewer.Exceptions;
+using DumpViewer.Services;
 using System;
 using System.Linq;
-using System.Windows.Forms;
 using static DumpViewer.Models.SmallMemoryDumpWindows;
 
 namespace DumpViewer.Models
@@ -22,6 +22,8 @@ namespace DumpViewer.Models
         /// Модель минидампа.
         /// </summary>
         public SmallMemoryDumpWindows DumpWindows { get => _dumpWindows; }
+        public bool ErrorCheck { get; private set; } //Проверка на наличие ошибки
+        public ValidationNotEqualError Error { get; private set; } //Само исключение
 
         /// <summary>
         /// Конструктор модели.
@@ -48,12 +50,23 @@ namespace DumpViewer.Models
         public void ReadSmallMemoryDumpWindows()
         {
             var count = 0;
-            _dumpWindows.Signature = _stream.ReadBytes(4);
-            if (!Enumerable.SequenceEqual(_dumpWindows.Signature, _signatureCheck))
-                MessageBox.Show("Открыть файл не удалось, так как он не соответствует сигнатуре PAGE.", "Открытие файла", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            _dumpWindows.ValidDump = _stream.ReadBytes(4);
-            if (!Enumerable.SequenceEqual(_dumpWindows.ValidDump, _validDu64Check) && !Enumerable.SequenceEqual(_dumpWindows.ValidDump, _validDumpCheck))
-                MessageBox.Show("Открыть файл не удалось, так как в нем нет подписи DU64 или DUMP.", "Открытие файла", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            try //Возможно исключение, когда файл будет расширения .dmp, но он не будет являться минидампом
+            {
+                _dumpWindows.Signature = _stream.ReadBytes(4);
+                if (!Enumerable.SequenceEqual(_dumpWindows.Signature, _signatureCheck))
+                    throw new ValidationNotEqualError("Открыть файл не удалось, так как он не соответствует сигнатуре PAGE.", _signatureCheck, _dumpWindows.Signature);
+                _dumpWindows.ValidDump = _stream.ReadBytes(4);
+                if (!Enumerable.SequenceEqual(_dumpWindows.ValidDump, _validDu64Check) && !Enumerable.SequenceEqual(_dumpWindows.ValidDump, _validDumpCheck))
+                    throw new ValidationNotEqualError("Открыть файл не удалось, так как в нем нет подписи DU64.", _validDu64Check, _dumpWindows.ValidDump);
+                else if(!Enumerable.SequenceEqual(_dumpWindows.ValidDump, _validDumpCheck) && !Enumerable.SequenceEqual(_dumpWindows.ValidDump, _validDu64Check))
+                    throw new ValidationNotEqualError("Открыть файл не удалось, так как в нем нет подписи DUMP.", _validDumpCheck, _dumpWindows.ValidDump);
+            }
+            catch (ValidationNotEqualError ex)
+            {
+                ErrorCheck = true;
+                Error = ex;
+                return;
+            }
             _dumpWindows.MajorVersion = _stream.ReadU4();
             _dumpWindows.MinorVersion = _stream.ReadU4();
 

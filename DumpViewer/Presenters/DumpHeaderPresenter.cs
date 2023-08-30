@@ -19,7 +19,7 @@ namespace DumpViewer.Presenters
         private DomainModel _model;
         private IDumpHeaderView _view;
 
-        public DumpHeaderPresenter(DomainModel model, IDumpHeaderView view)
+        public DumpHeaderPresenter(DomainModel model, IDumpHeaderView view) //В Presenter передается модель и представление
         {
             _model = model;
             _view = view;
@@ -27,38 +27,35 @@ namespace DumpViewer.Presenters
             _view.OpenFileEvent += ViewOpenFileEvent;
         }
 
-        private void ViewOpenFileEvent(object sender, OpenFileEventArgs e)
+        private void ViewOpenFileEvent(object sender, OpenFileEventArgs e) //Обработка события открытия файла
         {
             if (e.IsOpenFile)
             {
                 string bugCheckString;
-                string bugCheckCode;
-                string processor;
-                string versionArchitecture;
-                string fullPath;
-                string processorsCount;
-                string majorVersion;
-                string minorVersion;
-                string dumpFileSize;
-                string dumpFileTime;
                 ObservableCollection<string> parameters = new ObservableCollection<string>();
                 FileInfo fileInfo = new FileInfo(e.FullPath);
                 var data = _model.FromFile(fileInfo.FullName);
 
                 data.ReadSmallMemoryDumpWindows();
 
+                if (data.ErrorCheck)
+                {
+                    _view.ShowError(data.Error.Message);
+                    return;
+                }
+
                 if (Enum.IsDefined(typeof(BugCheckCodeEnum), data.DumpWindows.BugCheckCode))
                     bugCheckString = data.DumpWindows.BugCheckCode.ToString();
                 else bugCheckString = "";
-                bugCheckCode = "0x" + ((uint)data.DumpWindows.BugCheckCode).ToString("X8");
-                processor = data.DumpWindows.MachineImageType.ToString();
-                versionArchitecture = 'x' + data.DumpWindows.VersionArchitecture.ToString();
-                fullPath = e.FullPath;
-                processorsCount = data.DumpWindows.NumberProcessors.ToString();
-                majorVersion = data.DumpWindows.MajorVersion.ToString();
-                minorVersion = data.DumpWindows.MinorVersion.ToString();
-                dumpFileSize = fileInfo.Length.ToString();
-                dumpFileTime = fileInfo.CreationTime.ToString();
+                string bugCheckCode = "0x" + ((uint)data.DumpWindows.BugCheckCode).ToString("X8");
+                string processor = data.DumpWindows.MachineImageType.ToString();
+                string versionArchitecture = 'x' + data.DumpWindows.VersionArchitecture.ToString();
+                string fullPath = e.FullPath;
+                string processorsCount = data.DumpWindows.NumberProcessors.ToString();
+                string majorVersion = data.DumpWindows.MajorVersion.ToString();
+                string minorVersion = data.DumpWindows.MinorVersion.ToString();
+                string dumpFileSize = fileInfo.Length.ToString();
+                string dumpFileTime = fileInfo.CreationTime.ToString();
 
                 switch (data.DumpWindows.VersionArchitecture)
                 {
@@ -95,6 +92,8 @@ namespace DumpViewer.Presenters
                     dumpFileSize,
                     dumpFileTime
                     );
+
+                _view.IsOpen = true;
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace DumpViewer.Views.Forms
 {
-    partial class DumpHeaderViewerView
+    partial class DumpHeaderView
     {
         /// <summary>
         /// Required designer variable.
@@ -93,14 +93,14 @@
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -141,7 +141,7 @@
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel1.Size = new System.Drawing.Size(739, 498);
             this.panel1.TabIndex = 1;
-            this.panel1.VisibleChanged += new System.EventHandler(this.panel1_VisibleChanged);
+            this.panel1.VisibleChanged += new System.EventHandler(this.Panel1_VisibleChanged);
             // 
             // textBoxDumpFileTime
             // 
