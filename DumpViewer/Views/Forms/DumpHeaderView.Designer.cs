@@ -347,8 +347,9 @@
             this.labelDumpFileSize.AutoSize = true;
             this.labelDumpFileSize.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelDumpFileSize.Location = new System.Drawing.Point(157, 442);
+            this.labelDumpFileSize.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelDumpFileSize.Name = "labelDumpFileSize";
-            this.labelDumpFileSize.Size = new System.Drawing.Size(141, 23);
+            this.labelDumpFileSize.Size = new System.Drawing.Size(200, 23);
             this.labelDumpFileSize.TabIndex = 14;
             this.labelDumpFileSize.Text = "Dump File Size:";
             // 
@@ -361,8 +362,9 @@
             this.labelDumpFileTime.AutoSize = true;
             this.labelDumpFileTime.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelDumpFileTime.Location = new System.Drawing.Point(157, 412);
+            this.labelDumpFileTime.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelDumpFileTime.Name = "labelDumpFileTime";
-            this.labelDumpFileTime.Size = new System.Drawing.Size(149, 23);
+            this.labelDumpFileTime.Size = new System.Drawing.Size(200, 23);
             this.labelDumpFileTime.TabIndex = 13;
             this.labelDumpFileTime.Text = "Dump File Time:";
             // 
@@ -375,8 +377,9 @@
             this.labelMinorVersion.AutoSize = true;
             this.labelMinorVersion.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelMinorVersion.Location = new System.Drawing.Point(157, 382);
+            this.labelMinorVersion.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelMinorVersion.Name = "labelMinorVersion";
-            this.labelMinorVersion.Size = new System.Drawing.Size(131, 23);
+            this.labelMinorVersion.Size = new System.Drawing.Size(200, 23);
             this.labelMinorVersion.TabIndex = 12;
             this.labelMinorVersion.Text = "Minor Version:";
             // 
@@ -389,8 +392,9 @@
             this.labelMajorVersion.AutoSize = true;
             this.labelMajorVersion.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelMajorVersion.Location = new System.Drawing.Point(157, 352);
+            this.labelMajorVersion.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelMajorVersion.Name = "labelMajorVersion";
-            this.labelMajorVersion.Size = new System.Drawing.Size(131, 23);
+            this.labelMajorVersion.Size = new System.Drawing.Size(200, 23);
             this.labelMajorVersion.TabIndex = 11;
             this.labelMajorVersion.Text = "Major Version:";
             // 
@@ -403,8 +407,9 @@
             this.labelProcessorsCount.AutoSize = true;
             this.labelProcessorsCount.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelProcessorsCount.Location = new System.Drawing.Point(157, 322);
+            this.labelProcessorsCount.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelProcessorsCount.Name = "labelProcessorsCount";
-            this.labelProcessorsCount.Size = new System.Drawing.Size(159, 23);
+            this.labelProcessorsCount.Size = new System.Drawing.Size(200, 23);
             this.labelProcessorsCount.TabIndex = 10;
             this.labelProcessorsCount.Text = "Processors Count:";
             // 
@@ -417,8 +422,9 @@
             this.labelFullPath.AutoSize = true;
             this.labelFullPath.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelFullPath.Location = new System.Drawing.Point(157, 292);
+            this.labelFullPath.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelFullPath.Name = "labelFullPath";
-            this.labelFullPath.Size = new System.Drawing.Size(89, 23);
+            this.labelFullPath.Size = new System.Drawing.Size(200, 23);
             this.labelFullPath.TabIndex = 9;
             this.labelFullPath.Text = "Full Path:";
             // 
@@ -431,8 +437,9 @@
             this.labelVersionArchitecture.AutoSize = true;
             this.labelVersionArchitecture.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelVersionArchitecture.Location = new System.Drawing.Point(157, 262);
+            this.labelVersionArchitecture.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelVersionArchitecture.Name = "labelVersionArchitecture";
-            this.labelVersionArchitecture.Size = new System.Drawing.Size(185, 23);
+            this.labelVersionArchitecture.Size = new System.Drawing.Size(200, 23);
             this.labelVersionArchitecture.TabIndex = 8;
             this.labelVersionArchitecture.Text = "Version Architecture:";
             // 
@@ -445,8 +452,9 @@
             this.labelProcessor.AutoSize = true;
             this.labelProcessor.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelProcessor.Location = new System.Drawing.Point(157, 232);
+            this.labelProcessor.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelProcessor.Name = "labelProcessor";
-            this.labelProcessor.Size = new System.Drawing.Size(96, 23);
+            this.labelProcessor.Size = new System.Drawing.Size(200, 23);
             this.labelProcessor.TabIndex = 7;
             this.labelProcessor.Text = "Processor:";
             // 
@@ -459,8 +467,9 @@
             this.labelParameter4.AutoSize = true;
             this.labelParameter4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelParameter4.Location = new System.Drawing.Point(157, 202);
+            this.labelParameter4.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelParameter4.Name = "labelParameter4";
-            this.labelParameter4.Size = new System.Drawing.Size(119, 23);
+            this.labelParameter4.Size = new System.Drawing.Size(200, 23);
             this.labelParameter4.TabIndex = 6;
             this.labelParameter4.Text = "Parameter 4:";
             // 
@@ -473,8 +482,9 @@
             this.labelParameter3.AutoSize = true;
             this.labelParameter3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelParameter3.Location = new System.Drawing.Point(157, 172);
+            this.labelParameter3.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelParameter3.Name = "labelParameter3";
-            this.labelParameter3.Size = new System.Drawing.Size(119, 23);
+            this.labelParameter3.Size = new System.Drawing.Size(200, 23);
             this.labelParameter3.TabIndex = 5;
             this.labelParameter3.Text = "Parameter 3:";
             // 
@@ -487,8 +497,9 @@
             this.labelParameter2.AutoSize = true;
             this.labelParameter2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelParameter2.Location = new System.Drawing.Point(157, 142);
+            this.labelParameter2.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelParameter2.Name = "labelParameter2";
-            this.labelParameter2.Size = new System.Drawing.Size(119, 23);
+            this.labelParameter2.Size = new System.Drawing.Size(200, 23);
             this.labelParameter2.TabIndex = 4;
             this.labelParameter2.Text = "Parameter 2:";
             // 
@@ -501,8 +512,9 @@
             this.labelParameter1.AutoSize = true;
             this.labelParameter1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelParameter1.Location = new System.Drawing.Point(157, 112);
+            this.labelParameter1.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelParameter1.Name = "labelParameter1";
-            this.labelParameter1.Size = new System.Drawing.Size(119, 23);
+            this.labelParameter1.Size = new System.Drawing.Size(200, 23);
             this.labelParameter1.TabIndex = 3;
             this.labelParameter1.Text = "Parameter 1:";
             // 
@@ -515,8 +527,9 @@
             this.labelBugCheckCode.AutoSize = true;
             this.labelBugCheckCode.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelBugCheckCode.Location = new System.Drawing.Point(157, 82);
+            this.labelBugCheckCode.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelBugCheckCode.Name = "labelBugCheckCode";
-            this.labelBugCheckCode.Size = new System.Drawing.Size(154, 23);
+            this.labelBugCheckCode.Size = new System.Drawing.Size(200, 23);
             this.labelBugCheckCode.TabIndex = 2;
             this.labelBugCheckCode.Text = "Bug Check Code:";
             // 
@@ -529,8 +542,9 @@
             this.labelBugCheckString.AutoSize = true;
             this.labelBugCheckString.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelBugCheckString.Location = new System.Drawing.Point(157, 52);
+            this.labelBugCheckString.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelBugCheckString.Name = "labelBugCheckString";
-            this.labelBugCheckString.Size = new System.Drawing.Size(162, 23);
+            this.labelBugCheckString.Size = new System.Drawing.Size(200, 23);
             this.labelBugCheckString.TabIndex = 1;
             this.labelBugCheckString.Text = "Bug Check String:";
             // 
@@ -543,12 +557,13 @@
             this.labelDumpFile.AutoSize = true;
             this.labelDumpFile.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelDumpFile.Location = new System.Drawing.Point(157, 22);
+            this.labelDumpFile.MinimumSize = new System.Drawing.Size(200, 10);
             this.labelDumpFile.Name = "labelDumpFile";
-            this.labelDumpFile.Size = new System.Drawing.Size(102, 23);
+            this.labelDumpFile.Size = new System.Drawing.Size(200, 23);
             this.labelDumpFile.TabIndex = 0;
             this.labelDumpFile.Text = "Dump File:";
             // 
-            // DumpHeaderViewerView
+            // DumpHeaderView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -556,7 +571,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "DumpHeaderViewerView";
+            this.Name = "DumpHeaderView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DumpViewer";
             this.menuStrip1.ResumeLayout(false);
